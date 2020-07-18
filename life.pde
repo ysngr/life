@@ -3,7 +3,8 @@
 CellBoard cb;
 
 void setup() {
-  size(860, 640);
+  //size(860, 640);
+  size(1200, 900);
   frameRate(10);
   cb = new CellBoard();
 }
