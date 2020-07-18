@@ -1,19 +1,13 @@
 class Cell {
 
-  private final boolean ALIVE = true, DEAD = false;
-  final color STRCOL = color(240);
+  final color STROKECOL = color(240);
+  final color ALIVECELLCOLOR = color(240);
+  final color DEADCELLCOLOR = color(40);
 
-  int cellRow, cellCol;
-  float cellX, cellY, cellL;
+  private float cellX, cellY, cellL;
   private boolean cellState;
 
 
-  Cell(float x, float y, float l) {
-    cellX = x;
-    cellY = y;
-    cellL = l;
-    cellState = ( random(2) < 1 )? ALIVE : DEAD;
-  }
   Cell(float x, float y, float l, boolean s) {
     cellX = x;
     cellY = y;
@@ -34,15 +28,10 @@ class Cell {
   public void drawCell() {
 
     strokeWeight(1);
-    stroke(STRCOL);
-    fill(getStateColor());
+    stroke(STROKECOL);
+    fill(cellState? ALIVECELLCOLOR : DEADCELLCOLOR);
     square(cellX, cellY, cellL);
 
     return ;
-  }
-
-
-  private color getStateColor() {
-    return ( cellState )? color(240) : color(40);
   }
 }

@@ -1,10 +1,9 @@
-/* life */
+/* lifegame */
 
 CellBoard cb;
 
 void setup() {
   size(860, 640);
-  //noLoop();
   frameRate(10);
   cb = new CellBoard();
 }
@@ -19,8 +18,9 @@ void draw() {
 
 void keyPressed() {
   if ( key == 's' ) {
-    saveFrame("lifegame"+frameCount+".png");
-    //System.exit(0);
+    saveFrame("lifegame_"+frameCount+".png");
+  } else if ( key == 'h' ) {
+    noLoop();
   } else if ( key == 'r' ) {
     redraw();
   }
